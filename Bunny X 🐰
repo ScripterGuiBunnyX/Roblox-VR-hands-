@@ -1,0 +1,242 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Bunny X 🐰", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Brookhaven RP 🏡",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Script Status 🟢"
+})
+OrionLib:MakeNotification({
+	Name = "Bunny Hub 🐰",
+	Content = "Subscribe 😄 and Have Fun Using",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+Tab:AddButton({
+	Name = "Icehub ❄️",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))() 
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Troll People 🤡",
+	Callback = function()
+	loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\65\99\117\114\97\88\48\52\57\47\111\98\102\117\115\99\97\116\101\100\83\99\114\105\112\116\115\47\109\97\105\110\47\75\105\108\108\71\117\105\34\41\41\40\41\10")()
+      		print("button pressed")
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Combat Warriors 🗡️",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Script Status 🟢"
+})
+Tab:AddButton({
+	Name = "Auto Parry ⚔️",
+	Callback = function()
+	local lp = game.Players.LocalPlayer
+
+local animationInfo = {}
+
+function getInfo(id)
+  local success, info = pcall(function()
+      return game:GetService("MarketplaceService"):GetProductInfo(id)
+  end)
+  if success then
+      return info
+  end
+  return {Name=''}
+end
+function block(player)
+  keypress(0x46)
+  wait()
+  keyrelease(0x46)
+end
+
+local AnimNames = {
+  'Slash',
+  'Swing',
+  'Sword'
+}
+
+function playerAdded(v)
+    local function charadded(char)
+      local humanoid = char:WaitForChild("Humanoid", 5)
+      if humanoid then
+          humanoid.AnimationPlayed:Connect(function(track)
+              local info = animationInfo[track.Animation.AnimationId]
+              if not info then
+                  info = getInfo(tonumber(track.Animation.AnimationId:match("%d+")))
+                  animationInfo[track.Animation.AnimationId] = info
+              end
+             
+              if (lp.Character and lp.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head")) then
+                  local mag = (v.Character.Head.Position - lp.Character.Head.Position).Magnitude
+                  if mag < 15  then
+                     
+                      for _, animName in pairs(AnimNames) do
+                          if info.Name:match(animName) then
+                              pcall(block, v)
+                          end
+                      end
+                     
+                  end
+              end
+          end)
+      end
+  end
+ 
+  if v.Character then
+      charadded(v.Character)
+  end
+  v.CharacterAdded:Connect(charadded)
+end
+
+for i,v in pairs(game.Players:GetPlayers()) do
+   if v ~= lp then
+       playerAdded(v)
+   end
+end
+
+game.Players.PlayerAdded:Connect(playerAdded)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Hitbox Bow only 🏹",
+	Callback = function()
+	_G.HeadSize = 10
+_G.Disabled = true
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.Head.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.Head.Transparency = 1
+v.Character.Head.BrickColor = BrickColor.new("Red")
+v.Character.Head.Material = "Neon"
+v.Character.Head.CanCollide = false
+v.Character.Head.Massless = true
+end)
+end
+end
+end
+end)
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Prison life 🔫",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Script Status 🟢"
+})
+Tab:AddButton({
+	Name = "Synix (beta(",
+	Callback = function()
+	loadstring(game:HttpGet("https://scriptblox.com/raw/Prison-Life-Script-8539"))() 
+      		print("button pressed")
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "Prison life Scripts is more coming soon!!"
+})
+local Tab = Window:MakeTab({
+	Name = "Blade Ball 🗡️🏀",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Script Status 🟢"
+})
+Tab:AddButton({
+	Name = "Knights Hub",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Hubs/main/Blade%20ball"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "LUY HUB",
+	Callback = function()
+	loadstring(game:HttpGet('https://shz.al/~LUYHUB'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Tunx Hub",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TunxDeveloper/BladeBall/main/main"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Blade Ball",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/sirapobsriumang/Blade-ball/main/Blade-ball-free"))()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Blox fruit ⚔️",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Script Status 🟢"
+})
+Tab:AddButton({
+	Name = "ZEN HUB",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenHubTheBest/Main/main/Loader", true))()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Identify Fraud",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Troll People 👻",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "VR Hands (PC)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Vr Hands (PC) made by Bunny X",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/ScripterGuiBunnyX/Roblox-VR-hands-/main/VR%20hands%20Mobile'))();
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Others",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Please join to my discord Server 🥺 😁"
+})
+Tab:AddButton({
+	Name = "Infinite Yeild",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      		print("button pressed")
+  	end    
+})
